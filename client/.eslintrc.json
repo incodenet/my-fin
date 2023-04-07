@@ -1,0 +1,69 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier", "no-relative-import-paths"],
+  "settings": {
+    "import/resolver": {
+      "node": { "paths": ["./src"], "moduleDirectory": ["node_modules", "src/"] }
+    }
+  },
+  "rules": {
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
+      }
+    ],
+    "prettier/prettier": "warn",
+    "react/no-unused-prop-types": "error",
+    "no-nested-ternary": "error",
+    "no-dupe-else-if": "error",
+    "no-lonely-if": "error",
+    "no-await-in-loop": "warn",
+    "@typescript-eslint/default-param-last": "off",
+    "react/state-in-constructor": ["error", "never"],
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "static-variables",
+          "static-methods",
+          "instance-variables",
+          "getters",
+          "setters",
+          "lifecycle",
+          "render",
+          "instance-methods",
+          "everything-else"
+        ]
+      }
+    ],
+    "import/no-cycle": "off",
+    "import/no-unresolved": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["info", "warn", "error"]
+      }
+    ],
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "no-relative-import-paths/no-relative-import-paths": [
+      "warn",
+      {
+        "allowSameFolder": true,
+        "rootDir": "src"
+      }
+    ]
+  }
+}
